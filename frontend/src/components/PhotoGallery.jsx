@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./PhotoGallery.css";
 
+
 function PhotoGallery() {
   const [photos, setPhotos] = useState([]);
 
@@ -8,7 +9,7 @@ function PhotoGallery() {
     const getPhotos = () => {
       const token = localStorage.getItem("accessToken");
 
-      fetch("http://localhost:5000/api/photos", {
+      fetch(`${import.meta.env.VITE_API_URL}/api/photos`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -37,8 +38,7 @@ function PhotoGallery() {
         {photos.map((photo) => (
           <div className="photo-card" key={photo._id}>
             <img
-              src={`http://localhost:5000/${photo.path.replace(/\\/g, "/")}`}
-              alt="Captured"
+              src={`${import.meta.env.VITE_API_URL}/${photo.path.replace(/\\/g, "/")}`}         alt="Captured"
               className="captured-photo"
             />
             <p>
