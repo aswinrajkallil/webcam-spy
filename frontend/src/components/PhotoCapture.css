@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f1115;
+  color: white;
+}
+
+.photo-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.photo-container {
+  width: 100%;
+  max-width: 650px;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #9ca3af;
+  margin-bottom: 30px;
+}
+
+/* Camera */
+
+.camera-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #272a30;
+}
+
+.camera {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camera-placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+  background: #050505;
+}
+
+/* Hide canvas */
+
+.hidden-canvas {
+  display: none;
+}
+
+/* Buttons */
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.start-button,
+.stop-button {
+  border: none;
+  border-radius: 10px;
+
+  padding: 13px 28px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.start-button {
+  background: white;
+  color: #111;
+}
+
+.start-button:hover {
+  background: #e5e5e5;
+}
+
+.stop-button {
+  background: #dc2626;
+  color: white;
+}
+
+.stop-button:hover {
+  background: #b91c1c;
+}
+
+/* Status */
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #555;
+}
+
+.status-dot.active {
+  background: #22c55e;
+}
+
+/* Latest photo */
+
+.latest-section {
+  margin-top: 35px;
+}
+
+.latest-section h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.latest-photo {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  border: 1px solid #272a30;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .photo-page {
+    padding: 20px 15px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .camera-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .start-button,
+  .stop-button {
+    width: 100%;
+  }
+}
