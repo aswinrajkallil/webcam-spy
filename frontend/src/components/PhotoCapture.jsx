@@ -38,7 +38,7 @@ const startCamera = async () => {
       // Then every 10 seconds
       intervalRef.current = setInterval(() => {
         captureAndUpload();
-      }, 10);
+      }, 2500);
     };
 
   } catch (error) {
@@ -97,7 +97,7 @@ const startCamera = async () => {
       );
 // connection to backend
       const response = await fetch(
-        "http://localhost:5000/api/photos/upload",
+         `${import.meta.env.VITE_API_URL}/api/photos/upload`,
         {
           method: "POST",
           body: formData,
